@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACKLY | Buy & Sell Used Bikes</title>
+  <meta name="description" content="STACKLY is a trusted used bike marketplace to buy, sell, compare and discover pre-owned bikes near you.">
+  <meta name="keywords" content="used bikes, buy used bikes, sell used bike, bike marketplace, second hand bikes, pre-owned motorcycles, scooter marketplace, bike price estimator, STACKLY">
+  <meta name="author" content="STACKLY">
+  <meta name="theme-color" content="#0b1526">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STACKLY">
+  <meta property="og:title" content="STACKLY | Buy & Sell Used Bikes">
+  <meta property="og:description" content="STACKLY is a trusted used bike marketplace to buy, sell, compare and discover pre-owned bikes near you.">
+  <meta property="og:image" content="images/banners/hero-banner.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="STACKLY | Buy & Sell Used Bikes">
+  <meta name="twitter:description" content="Find your perfect used bike from verified sellers near you.">
+
+  <link rel="icon" href="images/logo/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= PAGE LOADER ================= -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader-ring"></span>
+    <p>Loading STACKLY&hellip;</p>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="STACKLY home">
+        <img src="images/logo/logo.webp" alt="STACKLY — used bike marketplace" width="143" height="44">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/bikes.html" class="nav-link">Buy Bikes</a></li>
+          <li><a href="pages/sell-bike.html" class="nav-link">Sell Your Bike</a></li>
+          <li><a href="pages/brands.html" class="nav-link">Brands</a></li>
+          <li><a href="pages/compare.html" class="nav-link">Compare</a></li>
+          <li><a href="pages/about.html" class="nav-link">About</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="pages/login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="pages/register.html" class="btn btn-outline btn-sm">Register</a>
+        <a href="pages/sell-bike.html" class="btn btn-primary btn-sm hide-mobile">Sell Your Bike</a>
+        <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <img src="images/logo/logo.webp" alt="STACKLY" width="132" height="34">
+      <button class="menu-close" id="menuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="pages/bikes.html" class="mobile-nav-link"><i class="fa-solid fa-motorcycle"></i> Buy Bikes</a></li>
+        <li><a href="pages/sell-bike.html" class="mobile-nav-link"><i class="fa-solid fa-tags"></i> Sell Your Bike</a></li>
+        <li><a href="pages/brands.html" class="mobile-nav-link"><i class="fa-solid fa-cube"></i> Brands</a></li>
+        <li><a href="pages/compare.html" class="mobile-nav-link"><i class="fa-solid fa-code-compare"></i> Compare</a></li>
+        <li><a href="pages/about.html" class="mobile-nav-link"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="pages/contact.html" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="pages/login.html" class="btn btn-outline-dark btn-block">Login</a>
+      <a href="pages/register.html" class="btn btn-dark btn-block">Register</a>
+      <a href="pages/sell-bike.html" class="btn btn-primary btn-block">Sell Your Bike</a>
+    </div>
+  </div>
+
+
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero hero-home">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Find Your Perfect <span class="grad">Used Bike</span></h1>
+          <p class="hero-subtitle">Explore verified pre-owned bikes from trusted sellers near you. Compare, save and buy with total confidence.</p>
+
+          <form class="hero-search" id="heroSearchForm" action="#" method="get" role="search">
+            <div class="search-panel">
+              <div class="search-grid">
+                <div class="search-field">
+                  <label for="hKeyword">Search</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="hKeyword" placeholder="Search bikes by brand, model or keyword" autocomplete="off">
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hBrand">Brand</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-cube"></i>
+                    <select id="hBrand">
+                      <option value="">All Brands</option>
+                      <option>Yamaha</option><option>Honda</option><option>Royal Enfield</option>
+                      <option>KTM</option><option>TVS</option><option>Bajaj</option>
+                      <option>Suzuki</option><option>Hero</option><option>Kawasaki</option>
+                      <option>BMW</option><option>Jawa</option><option>Ola Electric</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hBudget">Budget</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <select id="hBudget">
+                      <option value="">Any Budget</option>
+                      <option value="u50">Under ₹50,000</option>
+                      <option value="50-100">₹50K – ₹1L</option>
+                      <option value="100-200">₹1L – ₹2L</option>
+                      <option value="200-500">₹2L – ₹5L</option>
+                      <option value="500+">Above ₹5L</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hType">Bike Type</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-bolt"></i>
+                    <select id="hType">
+                      <option value="">All Types</option>
+                      <option>Commuter</option><option>Sports</option><option>Cruiser</option>
+                      <option>Scooters</option><option>Adventure</option><option>Electric</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="advanced-fields" id="advancedFields">
+                <div class="search-field">
+                  <label for="hFuel">Fuel Type</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-gas-pump"></i>
+                    <select id="hFuel">
+                      <option value="">Any Fuel</option>
+                      <option>Petrol</option><option>Diesel</option><option>Electric</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hTrans">Transmission</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-gears"></i>
+                    <select id="hTrans">
+                      <option value="">Any</option>
+                      <option>Manual</option><option>Automatic</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hYear">Model Year</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <select id="hYear">
+                      <option value="">Any Year</option>
+                      <option value="2024">2024 &amp; newer</option>
+                      <option value="2022">2022 &amp; newer</option>
+                      <option value="2020">2020 &amp; newer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search-field">
+                  <label for="hKm">Max KM</label>
+                  <div class="field-control">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <select id="hKm">
+                      <option value="">Any KM</option>
+                      <option value="10000">Under 10,000</option>
+                      <option value="20000">Under 20,000</option>
+                      <option value="30000">Under 30,000</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="search-panel-actions">
+                <a href="pages/bikes.html" class="btn btn-primary" id="heroSearchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search Bikes</a>
+                <a href="pages/bikes.html" class="btn btn-outline-dark">Browse All Bikes</a>
+                <button type="button" class="search-advanced" id="advancedToggle">
+                  <i class="fa-solid fa-sliders"></i> Advanced Search
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="hero-stats">
+            <div class="hero-stat"><b>50,000+</b><span>Bikes Listed</span></div>
+            <div class="hero-stat"><b>10,000+</b><span>Verified Sellers</span></div>
+            <div class="hero-stat"><b>100+</b><span>Cities</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Browse Categories</span>
+          <h2 class="section-title">Popular Bike <span class="accent">Categories</span></h2>
+          <p class="section-subtitle">Explore bikes by type and find exactly what fits your ride style.</p>
+        </div>
+        <div class="grid grid-cards-lg" id="categoryGrid"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED BIKES ================= -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Handpicked</span>
+          <h2 class="section-title">Featured <span class="accent">Used Bikes</span></h2>
+          <p class="section-subtitle">Handpicked bikes from trusted sellers — verified and ready to ride.</p>
+        </div>
+        <div class="grid grid-cards-lg" id="featuredBikes"><!-- injected by JS --></div>
+        <div class="load-more-wrap reveal">
+          <a href="pages/bikes.html" class="btn btn-outline-dark">View All Bikes <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LATEST BIKES ================= -->
+    <section class="section" id="latest">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Fresh Listings</span>
+          <h2 class="section-title">Recently Added <span class="accent">Bikes</span></h2>
+          <p class="section-subtitle">New bikes added every day by verified sellers across the country.</p>
+        </div>
+        <div class="results-bar reveal">
+          <div class="sort-box">
+            <label for="latestSort"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort by:</label>
+            <select class="sort-select" id="latestSort">
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="views">Most Viewed</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cards-lg" id="latestBikes"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ================= POPULAR BRANDS ================= -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Top Brands</span>
+          <h2 class="section-title">Popular <span class="accent">Brands</span></h2>
+          <p class="section-subtitle">Browse the most loved motorcycle and scooter brands on STACKLY.</p>
+        </div>
+        <div class="grid grid-cards" id="homeBrands"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ================= PRICE ESTIMATOR ================= -->
+    <section class="section" id="estimator">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Free Tool</span>
+          <h2 class="section-title">What's My Bike <span class="accent">Worth?</span></h2>
+          <p class="section-subtitle">Get a quick market estimate for your bike in seconds.</p>
+        </div>
+        <div class="estimator-card est-box reveal">
+          <h3>Bike Price Estimator</h3>
+          <p class="est-sub">Answer a few questions and we'll estimate your bike's current market value.</p>
+          <form id="estimatorForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="estBrand">Brand</label>
+                <select class="form-control" id="estBrand" required>
+                  <option value="">Select brand</option>
+                  <option>Yamaha</option><option>Honda</option><option>Royal Enfield</option>
+                  <option>KTM</option><option>TVS</option><option>Bajaj</option>
+                  <option>Suzuki</option><option>Hero</option><option>Kawasaki</option>
+                  <option>BMW</option><option>Jawa</option><option>Ola Electric</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="estModel">Model</label>
+                <select class="form-control" id="estModel" required>
+                  <option value="">Select model</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="estYear">Manufacturing Year</label>
+                <select class="form-control" id="estYear" required>
+                  <option value="">Select year</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="estKm">KM Driven</label>
+                <input class="form-control" type="number" id="estKm" placeholder="e.g. 18000" min="0" max="300000" required>
+              </div>
+              <div class="form-group">
+                <label for="estCond">Condition</label>
+                <select class="form-control" id="estCond" required>
+                  <option value="">Select condition</option>
+                  <option>Excellent</option><option>Very Good</option><option>Good</option><option>Fair</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="estOwners">Number of Owners</label>
+                <select class="form-control" id="estOwners" required>
+                  <option value="">Select</option>
+                  <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  <option value="4">4+</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa-solid fa-calculator"></i> Estimate Price</button>
+          </form>
+          <div class="est-result" id="estResult">
+            <div class="est-label">Estimated Market Value</div>
+            <div class="est-range">₹0 – ₹0</div>
+            <div class="est-note"></div>
+            <p class="est-disclaimer">*This is an estimated value based on market data and is not a guaranteed selling price. Final price depends on inspection and demand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOCATIONS ================= -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Nationwide</span>
+          <h2 class="section-title">Find Bikes <span class="accent">Near You</span></h2>
+          <p class="section-subtitle">Popular locations where buyers and sellers connect every day.</p>
+        </div>
+        <div class="grid grid-cards" id="cityGrid"><!-- injected by JS --></div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE ================= -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Why STACKLY</span>
+          <h2 class="section-title">Why Choose <span class="accent">STACKLY</span></h2>
+          <p class="section-subtitle">A safer, smarter and more transparent way to buy and sell used bikes.</p>
+        </div>
+        <div class="grid grid-cards">
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Verified Listings</h3>
+            <p>Browse bikes checked for authenticity, with genuine kms and clean ownership.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Trusted Sellers</h3>
+            <p>Connect with reliable bike owners and dealers who value transparent deals.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+            <h3>Transparent Pricing</h3>
+            <p>Get clear pricing and market estimates so you always know a fair deal.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Easy Buying</h3>
+            <p>Find, compare and contact sellers easily — all in one seamless platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Simple Process</span>
+          <h2 class="section-title">How It <span class="accent">Works</span></h2>
+          <p class="section-subtitle">A three-step journey whether you're buying or selling.</p>
+        </div>
+
+        <div class="section-head center reveal">
+          <h3 style="margin-bottom:22px">For Buyers</h3>
+        </div>
+        <div class="steps-wrap reveal">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>Search Bikes</h3>
+            <p>Use smart filters to find bikes by brand, budget, type and location.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="fa-solid fa-code-compare"></i></div>
+            <h3>Compare &amp; Inspect</h3>
+            <p>Compare up to 3 bikes side by side and shortlist your favourites.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Contact Seller &amp; Buy</h3>
+            <p>Chat, call or WhatsApp the seller, inspect and complete your purchase.</p>
+          </div>
+        </div>
+
+        <div class="section-head center reveal mt-60">
+          <h3>For Sellers</h3>
+        </div>
+        <div class="steps-wrap reveal">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="fa-solid fa-tags"></i></div>
+            <h3>List Your Bike</h3>
+            <p>Upload photos and details in minutes with our simple listing form.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Connect With Buyers</h3>
+            <p>Receive enquiries from verified buyers interested in your bike.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+            <h3>Sell Your Bike</h3>
+            <p>Finalize the deal, transfer ownership and get paid — hassle free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-icon"><i class="fa-solid fa-motorcycle"></i></div>
+            <div class="stat-count" data-count="50" data-suffix="K+">0</div>
+            <span>Bikes Listed</span>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <div class="stat-count" data-count="25" data-suffix="K+">0</div>
+            <span>Happy Buyers</span>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-icon"><i class="fa-solid fa-user-check"></i></div>
+            <div class="stat-count" data-count="10" data-suffix="K+">0</div>
+            <span>Verified Sellers</span>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-icon"><i class="fa-solid fa-city"></i></div>
+            <div class="stat-count" data-count="100" data-suffix="+">0</div>
+            <span>Cities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section testi-section" id="reviews">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2 class="section-title">What Our <span class="accent">Customers Say</span></h2>
+          <p class="section-subtitle">Thousands of riders trust STACKLY for their next bike.</p>
+        </div>
+
+        <div class="testi-slider reveal">
+          <div class="testi-track">
+            <div class="testi-slide">
+              <div class="testi-card">
+                <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="testi-text">"STACKLY made finding my used Yamaha incredibly easy. I compared multiple bikes and found the right one within a week."</p>
+                <div class="testi-user">
+                  <img src="images/users/user-1.webp" alt="Arun Kumar avatar">
+                  <div><b>Arun Kumar</b><span>Chennai</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="testi-text">"The price estimator was spot on. I sold my Activa above my expected price and the entire process was smooth and transparent."</p>
+                <div class="testi-user">
+                  <img src="images/users/user-2.webp" alt="Priya Sharma avatar">
+                  <div><b>Priya Sharma</b><span>Bangalore</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                <p class="testi-text">"Verified listings actually mean verified here. The seller was genuine and the bike matched the photos perfectly. Highly recommended."</p>
+                <div class="testi-user">
+                  <img src="images/users/user-3.webp" alt="Rahul Nair avatar">
+                  <div><b>Rahul Nair</b><span>Kochi</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="testi-text">"As a first-time buyer, the comparison tool helped me choose the perfect commuter bike within my budget. Great support team too."</p>
+                <div class="testi-user">
+                  <img src="images/users/user-4.webp" alt="Sneha Patel avatar">
+                  <div><b>Sneha Patel</b><span>Mumbai</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="testi-text">"Sold my KTM within 3 days of listing. The listing process was simple and the buyer was pre-verified. Fantastic experience."</p>
+                <div class="testi-user">
+                  <img src="images/users/user-5.webp" alt="Vikram Singh avatar">
+                  <div><b>Vikram Singh</b><span>Delhi</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-controls">
+            <button class="testi-btn testi-prev" aria-label="Previous review"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="testi-dots" aria-label="Review navigation"></div>
+            <button class="testi-btn testi-next" aria-label="Next review"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-section cta-bg">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2>Ready to Find Your Next Ride?</h2>
+          <p>Browse thousands of quality used bikes from trusted sellers across 100+ cities.</p>
+          <div class="cta-actions">
+            <a href="pages/bikes.html" class="btn btn-light btn-lg"><i class="fa-solid fa-motorcycle"></i> Explore Bikes</a>
+            <a href="pages/sell-bike.html" class="btn btn-dark btn-lg"><i class="fa-solid fa-tags"></i> Sell Your Bike</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" aria-label="STACKLY home" class="footer-logo-link"><img class="footer-logo" src="images/logo/logo.webp" alt="STACKLY logo" width="150" height="38"></a>
+          <p class="footer-about">Your trusted destination for buying and selling used bikes. Find your ride, make it yours.</p>
+          <div class="footer-socials">
+            <a href="pages/404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="pages/404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="pages/404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="pages/404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="pages/404.html" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Buy Bikes</h4>
+          <ul class="footer-links">
+            <li><a href="pages/bikes.html"><i class="fa-solid fa-caret-right"></i> Search Bikes</a></li>
+            <li><a href="pages/404.html"><i class="fa-solid fa-caret-right"></i> Featured Bikes</a></li>
+            <li><a href="pages/brands.html"><i class="fa-solid fa-caret-right"></i> Popular Brands</a></li>
+            <li><a href="pages/compare.html"><i class="fa-solid fa-caret-right"></i> Compare Bikes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sell Bikes</h4>
+          <ul class="footer-links">
+            <li><a href="pages/sell-bike.html"><i class="fa-solid fa-caret-right"></i> Sell Your Bike</a></li>
+            <li><a href="pages/404.html"><i class="fa-solid fa-caret-right"></i> Price Estimator</a></li>
+            <li><a href="pages/sell-bike.html"><i class="fa-solid fa-caret-right"></i> Seller Guide</a></li>
+            <li><a href="pages/contact.html"><i class="fa-solid fa-caret-right"></i> Dealer Registration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="pages/about.html"><i class="fa-solid fa-caret-right"></i> About Us</a></li>
+            <li><a href="pages/contact.html"><i class="fa-solid fa-caret-right"></i> Contact</a></li>
+            <li><a href="pages/contact.html"><i class="fa-solid fa-caret-right"></i> Help Center</a></li>
+            <li><a href="pages/contact.html"><i class="fa-solid fa-caret-right"></i> FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot"></i> 123 Main Street, Bangalore, India</li>
+            <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@stackly.com">info@stackly.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 STACKLY. All Rights Reserved.</span>
+        <span><a href="pages/404.html">Privacy</a> &middot; <a href="pages/404.html">Terms</a> &middot; <a href="pages/404.html">Support</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/bikes.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/sell-bike.js"></script>
+</body>
+</html>

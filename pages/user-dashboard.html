@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | STACKLY</title>
+  <meta name="description" content="Your STACKLY user dashboard — manage your bikes, favorites and messages.">
+  <meta name="theme-color" content="#0b1526">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STACKLY">
+  <meta property="og:title" content="User Dashboard | STACKLY">
+  <link rel="icon" href="../images/logo/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body id="dashboard" data-role="user">
+
+  <!-- ================= PAGE LOADER ================= -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader-ring"></span>
+    <p>Loading STACKLY&hellip;</p>
+  </div>
+
+  <main>
+    <!-- ================= DASHBOARD HEADER ================= -->
+    <header class="dash-header">
+      <div class="container dash-header-inner">
+        <a href="../index.html" class="dash-header-logo" aria-label="STACKLY home">
+          <img src="../images/logo/logo.webp" alt="STACKLY" width="132" height="34">
+        </a>
+        <div class="dash-header-actions">
+          <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open dashboard menu"><i class="fa-solid fa-bars"></i></button>
+          <span class="dash-header-role"><i class="fa-solid fa-user"></i> User</span>
+          <a href="login.html" class="btn btn-outline btn-sm dash-header-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= USER DASHBOARD ================= -->
+    <section class="dash-section">
+      <div class="container dash-container">
+
+        <div class="dash-wrap">
+
+          <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar-head">
+              <div>
+                <span class="eyebrow">User Dashboard</span>
+                <h1 id="dashGreeting">Welcome back, Rider</h1>
+              </div>
+              <button class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="dash-profile">
+              <img src="../images/users/user-1.webp" alt="Rahul Sharma" class="dash-avatar">
+              <div>
+                <b>Rahul Sharma</b>
+                <span class="role-badge" id="roleBadge">User</span>
+              </div>
+            </div>
+            <nav class="dash-nav" aria-label="Dashboard navigation">
+              <a class="dash-link active" data-panel="overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+              <a class="dash-link" data-panel="my-bikes"><i class="fa-solid fa-motorcycle"></i> My Bikes</a>
+              <a class="dash-link" data-panel="favorites"><i class="fa-solid fa-heart"></i> Favorites</a>
+              <a class="dash-link" data-panel="messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+              <a class="dash-link" data-panel="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+            <div class="dash-sidebar-foot">
+              <a href="login.html" class="btn btn-outline btn-sm btn-block"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+          </aside>
+          <div class="dash-overlay" id="dashOverlay"></div>
+
+          <div class="dash-main">
+
+            <!-- ===== OVERVIEW ===== -->
+            <section class="dash-panel active" id="panel-overview">
+              <div class="dash-stats" id="overviewStats"></div>
+
+              <div class="dash-grid">
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Recent Listings</h3>
+                    <a href="404.html">View all <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                  <div id="recentListings"></div>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Recent Activity</h3>
+                  </div>
+                  <div class="activity-list" id="activityFeed"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== MY BIKES ===== -->
+            <section class="dash-panel" id="panel-my-bikes">
+              <div class="dash-panel-head">
+                <div>
+                  <h2>My Bikes</h2>
+                  <p>Bikes you have listed for sale on STACKLY.</p>
+                </div>
+                <a href="404.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Sell a Bike</a>
+              </div>
+              <div class="dash-bikes" id="myBikesList"></div>
+            </section>
+
+            <!-- ===== FAVORITES ===== -->
+            <section class="dash-panel" id="panel-favorites">
+
+              <!-- Header -->
+              <div class="dash-panel-head">
+                <div>
+                  <span class="eyebrow">Saved Bikes</span>
+                  <h2>Favorites</h2>
+                  <p>Bikes you have saved to your wishlist.</p>
+                </div>
+
+                <a href="404.html" class="btn btn-outline-dark btn-sm">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  Browse Bikes
+                </a>
+              </div>
+
+              <!-- Favorites Summary -->
+              <div class="dash-stats favorites-stats">
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div>
+                    <span class="dash-stat-label">Saved Bikes</span>
+                    <strong id="favoriteCount">0</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-tag"></i>
+                  </div>
+                  <div>
+                    <span class="dash-stat-label">Price Range</span>
+                    <strong id="favoritePriceRange">—</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <span class="dash-stat-label">Locations</span>
+                    <strong id="favoriteLocations">0</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-bell"></i>
+                  </div>
+                  <div>
+                    <span class="dash-stat-label">Price Alerts</span>
+                    <strong id="favoriteAlerts">0</strong>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Favorites Toolbar -->
+              <div class="dash-card favorites-toolbar">
+
+                <div class="favorites-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input
+                    type="search"
+                    id="favoriteSearch"
+                    placeholder="Search your favorite bikes..."
+                    aria-label="Search favorite bikes"
+                  >
+                </div>
+
+                <div class="favorites-filters">
+
+                  <select id="favoriteSort" class="form-input">
+                    <option value="newest">Recently Added</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="year-new">Newest Model</option>
+                    <option value="year-old">Oldest Model</option>
+                  </select>
+
+                  <a
+                    href="404.html"
+                    class="btn btn-outline-dark btn-sm"
+                    id="clearFavorites"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Clear All
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- Favorite Bikes -->
+              <div class="dash-card favorites-content">
+
+                <div class="dash-card-head">
+                  <div>
+                    <h3>Saved Bikes</h3>
+                    <span id="favoriteResultText">
+                      Your favorite bikes will appear here.
+                    </span>
+                  </div>
+
+                  <span class="dash-count-badge" id="favoriteBadge">0</span>
+                </div>
+
+                <div
+                  class="dash-bikes"
+                  id="favBikesList"
+                ></div>
+
+                <!-- Empty State -->
+                <div
+                  class="favorites-empty is-hidden"
+                  id="favoritesEmpty"
+                >
+                  <div class="favorites-empty-icon">
+                    <i class="fa-regular fa-heart"></i>
+                  </div>
+
+                  <h3>No Favorite Bikes Yet</h3>
+
+                  <p>
+                    You haven't saved any bikes to your favorites.
+                    Browse our marketplace and save bikes you like.
+                  </p>
+
+                  <a href="404.html" class="btn btn-primary">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    Browse Used Bikes
+                  </a>
+                </div>
+
+                <!-- No Search Results -->
+                <div
+                  class="favorites-no-results is-hidden"
+                  id="favoritesNoResults"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+
+                  <h3>No Bikes Found</h3>
+
+                  <p>
+                    We couldn't find any favorite bikes matching your search.
+                  </p>
+
+                  <a
+                    href="404.html"
+                    class="btn btn-outline-dark btn-sm"
+                    id="clearFavoriteSearch"
+                  >
+                    Clear Search
+                  </a>
+                </div>
+
+              </div>
+
+              <!-- Price Alert Information -->
+              <div class="dash-card favorite-info-card">
+
+                <div class="favorite-info-icon">
+                  <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div class="favorite-info-content">
+                  <h3>Don't Miss a Great Deal</h3>
+
+                  <p>
+                    Save your favorite bikes and keep track of their prices,
+                    availability and listing updates.
+                  </p>
+                </div>
+
+                <a href="404.html" class="btn btn-outline-dark btn-sm">
+                  Find More Bikes
+                </a>
+
+              </div>
+
+            </section>
+
+            <!-- ===== MESSAGES ===== -->
+            <section class="dash-panel" id="panel-messages">
+
+              <!-- Messages Header -->
+              <div class="dash-panel-head">
+                <div>
+                  <span class="eyebrow">Inbox</span>
+                  <h2>Messages</h2>
+                  <p>Enquiries from interested buyers and sellers.</p>
+                </div>
+
+                <a
+                  href="404.html"
+                  class="btn btn-primary btn-sm"
+                  id="composeMessageBtn"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  New Message
+                </a>
+              </div>
+
+              <!-- Message Statistics -->
+              <div class="dash-stats message-stats">
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+
+                  <div>
+                    <span class="dash-stat-label">Total Messages</span>
+                    <strong id="totalMessages">0</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-envelope-open"></i>
+                  </div>
+
+                  <div>
+                    <span class="dash-stat-label">Read</span>
+                    <strong id="readMessages">0</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+
+                  <div>
+                    <span class="dash-stat-label">Unread</span>
+                    <strong id="unreadMessages">0</strong>
+                  </div>
+                </div>
+
+                <div class="dash-stat">
+                  <div class="dash-stat-icon">
+                    <i class="fa-solid fa-reply"></i>
+                  </div>
+
+                  <div>
+                    <span class="dash-stat-label">Replied</span>
+                    <strong id="repliedMessages">0</strong>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Search and Filters -->
+              <div class="dash-card messages-toolbar">
+
+                <div class="messages-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+
+                  <input
+                    type="search"
+                    id="messageSearch"
+                    placeholder="Search messages, users or bikes..."
+                    aria-label="Search messages"
+                  >
+                </div>
+
+                <div class="messages-filters">
+
+                  <select id="messageFilter" class="form-input">
+                    <option value="all">All Messages</option>
+                    <option value="unread">Unread</option>
+                    <option value="read">Read</option>
+                    <option value="buyer">Buyers</option>
+                    <option value="seller">Sellers</option>
+                  </select>
+
+                  <select id="messageSort" class="form-input">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                  </select>
+
+                  <a
+                    href="404.html"
+                    type="button"
+                    class="btn btn-outline-dark btn-sm"
+                    id="markAllRead"
+                  >
+                    <i class="fa-solid fa-check-double"></i>
+                    Mark All Read
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- Message Tabs -->
+              <div class="message-tabs">
+
+                <a
+                  href="404.html"
+                  class="message-tab active"
+                  data-message-tab="all"
+                >
+                  <i class="fa-solid fa-inbox"></i>
+                  All
+                  <span id="allMessageCount">0</span>
+                </a>
+
+                <a
+                  href="404.html"
+                  class="message-tab"
+                  data-message-tab="unread"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                  Unread
+                  <span id="unreadMessageCount">0</span>
+                </a>
+
+                <a
+                  href="404.html"
+                  class="message-tab"
+                  data-message-tab="sent"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+                  Sent
+                  <span id="sentMessageCount">0</span>
+                </a>
+
+              </div>
+
+              <!-- Messages List -->
+              <div class="dash-card messages-card">
+
+                <div class="dash-card-head">
+                  <div>
+                    <h3>Conversation Inbox</h3>
+
+                    <span id="messageResultText">
+                      Your conversations will appear here.
+                    </span>
+                  </div>
+
+                  <span
+                    class="dash-count-badge"
+                    id="messageBadge"
+                  >
+                    0
+                  </span>
+                </div>
+
+                <div
+                  class="message-list"
+                  id="msgList"
+                ></div>
+
+                <!-- Empty State -->
+                <div
+                  class="messages-empty is-hidden"
+                  id="messagesEmpty"
+                >
+
+                  <div class="messages-empty-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                  </div>
+
+                  <h3>No Messages Yet</h3>
+
+                  <p>
+                    You don't have any conversations yet.
+                    When buyers or sellers contact you,
+                    their messages will appear here.
+                  </p>
+
+                  <a
+                    href="404.html"
+                    class="btn btn-primary"
+                  >
+                    <i class="fa-solid fa-motorcycle"></i>
+                    Browse Bikes
+                  </a>
+
+                </div>
+
+                <!-- No Search Results -->
+                <div
+                  class="messages-no-results is-hidden"
+                  id="messagesNoResults"
+                >
+
+                  <i class="fa-solid fa-magnifying-glass"></i>
+
+                  <h3>No Messages Found</h3>
+
+                  <p>
+                    No conversations match your current search or filter.
+                  </p>
+
+                  <a
+                    href="404.html"
+                    class="btn btn-outline-dark btn-sm"
+                    id="clearMessageSearch"
+                  >
+                    Clear Search
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- Message Help Card -->
+              <div class="dash-card message-help-card">
+
+                <div class="message-help-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="message-help-content">
+                  <h3>Stay Safe While Messaging</h3>
+
+                  <p>
+                    Never share passwords, OTPs or sensitive banking information.
+                    Always verify bike details and documents before making a payment.
+                  </p>
+                </div>
+
+                <a
+                  href="404.html"
+                  class="btn btn-outline-dark btn-sm"
+                >
+                  Contact Support
+                </a>
+
+              </div>
+
+            </section>
+
+            <!-- ===== SETTINGS ===== -->
+            <section class="dash-panel" id="panel-settings">
+              <div class="dash-panel-head">
+                <div>
+                  <h2>Settings</h2>
+                  <p>Manage your account and notification preferences.</p>
+                </div>
+              </div>
+              <div class="dash-settings">
+                <form class="app-form" id="dashSettingsForm" novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="dsFname">First Name</label>
+                      <input type="text" id="dsFname" class="form-input" value="Rahul" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="dsLname">Last Name</label>
+                      <input type="text" id="dsLname" class="form-input" value="Sharma" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="dsEmail">Email Address</label>
+                    <input type="email" id="dsEmail" class="form-input" value="rahul@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="dsPhone">Phone Number</label>
+                    <input type="tel" id="dsPhone" class="form-input" value="9876543210" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                </form>
+                <div class="form-row-between">
+                  <div>
+                    <b>Email notifications</b>
+                    <span>Get updates on new bikes and offers.</span>
+                  </div>
+                  <label class="check-label"><input type="checkbox" id="dsNotify" checked> Enabled</label>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

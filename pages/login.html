@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | STACKLY</title>
+  <meta name="description" content="Log in to your STACKLY account to buy and sell used bikes.">
+  <meta name="theme-color" content="#0b1526">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STACKLY">
+  <meta property="og:title" content="Login | STACKLY">
+  <link rel="icon" href="../images/logo/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= PAGE LOADER ================= -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader-ring"></span>
+    <p>Loading STACKLY&hellip;</p>
+  </div>
+
+  <main>
+    <!-- ================= AUTH ================= -->
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-panel reveal">
+          <div class="auth-visual">
+            <a href="../index.html" aria-label="STACKLY home" class="auth-logo-link"><img src="../images/logo/logo.webp" alt="STACKLY" width="150" height="38" class="auth-logo"></a>
+            <h2>Welcome Back, Rider!</h2>
+            <p>Log in to save favourites, message sellers and track your bike listings.</p>
+            <ul class="auth-points">
+              <li><i class="fa-solid fa-check"></i> Save bikes to your wishlist</li>
+              <li><i class="fa-solid fa-check"></i> Connect directly with sellers</li>
+              <li><i class="fa-solid fa-check"></i> Manage your listings in one place</li>
+            </ul>
+          </div>
+          <div class="auth-body">
+            <div class="auth-head">
+              <h3>Login to <span class="accent">STACKLY</span></h3>
+              <p>Enter your details to continue.</p>
+            </div>
+            <form class="app-form" id="loginForm" novalidate>
+              <div class="form-group">
+                <label for="lgEmail">Email Address</label>
+                <input type="email" id="lgEmail" name="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="lgPass">Password</label>
+                <div class="input-wrap">
+                  <input type="password" id="lgPass" name="password" class="form-input" placeholder="Your password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}" minlength="8">
+                  <button type="button" class="input-toggle" data-toggle="lgPass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Login As</label>
+                <div class="role-select">
+                  <label class="role-option"><input type="radio" name="lgRole" value="user" checked><span class="role-box"><i class="fa-solid fa-user"></i> User</span></label>
+                  <label class="role-option"><input type="radio" name="lgRole" value="admin"><span class="role-box"><i class="fa-solid fa-shield-halved"></i> Admin</span></label>
+                </div>
+              </div>
+              <div class="form-row-between">
+                <label class="check-label"><input type="checkbox" id="lgRemember" name="remember"> Remember me</label>
+                <a href="404.html" class="link-accent">Forgot password?</a>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+              <div class="form-success" hidden><i class="fa-solid fa-circle-check"></i> Welcome back! Redirecting you to your dashboard…</div>
+            </form>
+            <p class="auth-switch">New to STACKLY? <a href="register.html">Create an account</a></p>
+             <a href="../index.html" class="back-home-btn" aria-label="Back to home"><i class="fa-solid fa-house"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ 
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | STACKLY</title>
+  <meta name="description" content="STACKLY admin dashboard — approve listings, manage users and monitor the marketplace.">
+  <meta name="theme-color" content="#0b1526">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STACKLY">
+  <meta property="og:title" content="Admin Dashboard | STACKLY">
+  <link rel="icon" href="../images/logo/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body id="dashboard" data-role="admin">
+
+  <!-- ================= PAGE LOADER ================= -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader-ring"></span>
+    <p>Loading STACKLY&hellip;</p>
+  </div>
+
+  <main>
+    <!-- ================= DASHBOARD HEADER ================= -->
+    <header class="dash-header">
+      <div class="container dash-header-inner">
+        <a href="../index.html" class="dash-header-logo" aria-label="STACKLY home">
+          <img src="../images/logo/logo.webp" alt="STACKLY" width="132" height="34">
+        </a>
+        <div class="dash-header-actions">
+          <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open dashboard menu"><i class="fa-solid fa-bars"></i></button>
+          <span class="dash-header-role"><i class="fa-solid fa-shield-halved"></i> Admin</span>
+          <a href="login.html" class="btn btn-outline btn-sm dash-header-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= ADMIN DASHBOARD ================= -->
+    <section class="dash-section">
+      <div class="container dash-container">
+
+        <div class="dash-wrap">
+
+          <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar-head">
+              <div>
+                <span class="eyebrow">Admin Dashboard</span>
+                <h1 id="dashGreeting">Welcome back, Administrator</h1>
+              </div>
+              <button class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="dash-profile">
+              <img src="../images/users/user-1.webp" alt="Rahul Sharma" class="dash-avatar">
+              <div>
+                <b>Rahul Sharma</b>
+                <span class="role-badge admin" id="roleBadge">Admin</span>
+              </div>
+            </div>
+            <nav class="dash-nav" aria-label="Dashboard navigation">
+              <a class="dash-link active" data-panel="overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+              <a class="dash-link" data-panel="listings"><i class="fa-solid fa-table-list"></i> Manage Listings</a>
+              <a class="dash-link" data-panel="users"><i class="fa-solid fa-users"></i> Users</a>
+              <a class="dash-link" data-panel="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+            <div class="dash-sidebar-foot">
+              <a href="login.html" class="btn btn-outline btn-sm btn-block"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+          </aside>
+          <div class="dash-overlay" id="dashOverlay"></div>
+
+          <div class="dash-main">
+
+            <!-- ===== OVERVIEW ===== -->
+            <section class="dash-panel active" id="panel-overview">
+              <div class="dash-stats" id="overviewStats"></div>
+
+              <div class="dash-grid">
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Weekly Sales</h3>
+                    <a href="404.html">View report <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                  <div class="chart-bars">
+                    <div class="chart-col"><span class="chart-val">12</span><div class="chart-bar" style="height:36%"></div><b>Mon</b></div>
+                    <div class="chart-col"><span class="chart-val">18</span><div class="chart-bar" style="height:52%"></div><b>Tue</b></div>
+                    <div class="chart-col"><span class="chart-val">10</span><div class="chart-bar" style="height:30%"></div><b>Wed</b></div>
+                    <div class="chart-col"><span class="chart-val">24</span><div class="chart-bar" style="height:68%"></div><b>Thu</b></div>
+                    <div class="chart-col"><span class="chart-val">31</span><div class="chart-bar" style="height:88%"></div><b>Fri</b></div>
+                    <div class="chart-col"><span class="chart-val">22</span><div class="chart-bar" style="height:62%"></div><b>Sat</b></div>
+                    <div class="chart-col"><span class="chart-val">15</span><div class="chart-bar" style="height:44%"></div><b>Sun</b></div>
+                  </div>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Top Brands</h3>
+                  </div>
+                  <div class="brand-ranks">
+                    <div class="brand-rank">
+                      <span class="brand-rank-name"><i class="fa-solid fa-motorcycle"></i> Royal Enfield</span>
+                      <div class="brand-track"><i style="width:92%"></i></div>
+                      <b>92</b>
+                    </div>
+                    <div class="brand-rank">
+                      <span class="brand-rank-name"><i class="fa-solid fa-motorcycle"></i> Honda</span>
+                      <div class="brand-track"><i style="width:78%"></i></div>
+                      <b>78</b>
+                    </div>
+                    <div class="brand-rank">
+                      <span class="brand-rank-name"><i class="fa-solid fa-motorcycle"></i> Yamaha</span>
+                      <div class="brand-track"><i style="width:65%"></i></div>
+                      <b>65</b>
+                    </div>
+                    <div class="brand-rank">
+                      <span class="brand-rank-name"><i class="fa-solid fa-motorcycle"></i> Bajaj</span>
+                      <div class="brand-track"><i style="width:48%"></i></div>
+                      <b>48</b>
+                    </div>
+                    <div class="brand-rank">
+                      <span class="brand-rank-name"><i class="fa-solid fa-motorcycle"></i> TVS</span>
+                      <div class="brand-track"><i style="width:40%"></i></div>
+                      <b>40</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-grid">
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Recent Listings</h3>
+                    <a href="404.html">View all <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                  <div id="recentListings"></div>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-head">
+                    <h3>Recent Activity</h3>
+                  </div>
+                  <div class="activity-list" id="activityFeed"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== MANAGE LISTINGS ===== -->
+            <section class="dash-panel" id="panel-listings">
+
+              <!-- Section Header -->
+              <div class="dash-panel-head">
+                <div>
+                  <span class="dash-eyebrow">LISTING MANAGEMENT</span>
+                  <h2>Manage Listings</h2>
+                  <p>Approve, edit, review or remove bike listings on STACKLY.</p>
+                </div>
+                <button class="dash-btn dash-btn-primary" id="addListingBtn"><i class="fa-solid fa-plus"></i> Add New Listing</button>
+              </div>
+
+              <!-- ===== LISTING STATISTICS ===== -->
+              <div class="listing-stats">
+                <div class="listing-stat-card">
+                  <div class="listing-stat-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                  <div>
+                    <span>Total Listings</span>
+                    <strong id="totalListings">0</strong>
+                    <small>All bike listings</small>
+                  </div>
+                </div>
+                <div class="listing-stat-card">
+                  <div class="listing-stat-icon pending"><i class="fa-solid fa-clock"></i></div>
+                  <div>
+                    <span>Pending Approval</span>
+                    <strong id="totalPending">0</strong>
+                    <small>Waiting for review</small>
+                  </div>
+                </div>
+                <div class="listing-stat-card">
+                  <div class="listing-stat-icon approved"><i class="fa-solid fa-circle-check"></i></div>
+                  <div>
+                    <span>Approved</span>
+                    <strong id="totalApproved">0</strong>
+                    <small>Live listings</small>
+                  </div>
+                </div>
+                <div class="listing-stat-card">
+                  <div class="listing-stat-icon rejected"><i class="fa-solid fa-circle-xmark"></i></div>
+                  <div>
+                    <span>Rejected</span>
+                    <strong id="totalRejected">0</strong>
+                    <small>Rejected listings</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== SEARCH & FILTER ===== -->
+              <div class="dash-card listing-filter-card">
+                <div class="listing-filter-head">
+                  <div>
+                    <h3><i class="fa-solid fa-list"></i> All Listings</h3>
+                    <p>Search and filter bike listings.</p>
+                  </div>
+                  <a href="404.html" class="dash-btn dash-btn-outline" id="resetListingFilters"><i class="fa-solid fa-rotate-right"></i> Reset</a>
+                </div>
+                <div class="listing-filters">
+                  <div class="listing-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="listingSearch" placeholder="Search bike, seller or location...">
+                  </div>
+                  <div class="listing-filter">
+                    <label for="listingBrand">Brand</label>
+                    <select id="listingBrand">
+                      <option value="">All Brands</option>
+                      <option value="Yamaha">Yamaha</option>
+                      <option value="Honda">Honda</option>
+                      <option value="Royal Enfield">Royal Enfield</option>
+                      <option value="Bajaj">Bajaj</option>
+                      <option value="TVS">TVS</option>
+                      <option value="KTM">KTM</option>
+                      <option value="Suzuki">Suzuki</option>
+                    </select>
+                  </div>
+                  <div class="listing-filter">
+                    <label for="listingStatus">Status</label>
+                    <select id="listingStatus">
+                      <option value="">All Status</option>
+                      <option value="approved">Approved</option>
+                      <option value="pending">Pending</option>
+                      <option value="rejected">Rejected</option>
+                    </select>
+                  </div>
+                  <div class="listing-filter">
+                    <label for="listingPrice">Price</label>
+                    <select id="listingPrice">
+                      <option value="">Any Price</option>
+                      <option value="under50000">Under ₹50,000</option>
+                      <option value="50000-100000">₹50,000 – ₹1 Lakh</option>
+                      <option value="100000-200000">₹1 – ₹2 Lakh</option>
+                      <option value="above200000">Above ₹2 Lakh</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== LISTINGS TABLE ===== -->
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3>Bike Listings</h3>
+                    <p>Manage all submitted bikes from sellers.</p>
+                  </div>
+                  <div class="listing-table-actions">
+                    <a href="404.html" class="dash-icon-btn" title="Refresh" id="refreshListings"><i class="fa-solid fa-arrows-rotate"></i></a>
+                    <a href="404.html" class="dash-btn dash-btn-outline" id="exportListings"><i class="fa-solid fa-download"></i> Export</a>
+                  </div>
+                </div>
+
+                <div class="dash-table-wrap">
+                  <table class="dash-table listing-table">
+                    <thead>
+                      <tr>
+                        <th><input type="checkbox" id="selectAllListings"></th>
+                        <th>Bike</th>
+                        <th>Seller</th>
+                        <th>Price</th>
+                        <th>Year</th>
+                        <th>Location</th>
+                        <th>Views</th>
+                        <th>Status</th>
+                        <th>Listed On</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="adminListingsBody"></tbody>
+                  </table>
+                </div>
+
+                <!-- Empty State -->
+                <div class="listing-empty" id="listingEmpty" style="display:none;">
+                  <div class="listing-empty-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                  <h3>No Listings Found</h3>
+                  <p>There are no bike listings matching your search or filter.</p>
+                  <button class="dash-btn dash-btn-outline" id="clearListingSearch">Clear Filters</button>
+                </div>
+
+                <!-- Pagination -->
+                <div class="listing-pagination">
+                  <span id="listingResultCount">Showing 0 listings</span>
+                  <div class="pagination-buttons">
+                    <a href="404.html" class="dash-icon-btn" id="listingPrev" aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="404.html" class="page-number active">1</a>
+                    <a href="404.html" class="page-number">2</a>
+                    <a href="404.html" class="page-number">3</a>
+                    <a href="404.html" class="dash-icon-btn" id="listingNext" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== PENDING APPROVALS ===== -->
+              <div class="dash-card dash-mt">
+                <div class="dash-card-head">
+                  <div>
+                    <h3><i class="fa-solid fa-hourglass-half"></i> Pending Approvals</h3>
+                    <p>Review new bike listings before they become visible to buyers.</p>
+                  </div>
+                  <span class="dash-count-badge" id="pendingCount">0</span>
+                </div>
+                <div class="pending-list" id="pendingApprovals"></div>
+                <div class="pending-empty" id="pendingEmpty" style="display:none;">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <h4>All Caught Up!</h4>
+                  <p>There are no pending bike listings waiting for approval.</p>
+                </div>
+              </div>
+
+              <!-- ===== RECENT LISTING ACTIVITY ===== -->
+              <div class="dash-card dash-mt">
+                <div class="dash-card-head">
+                  <div>
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Listing Activity</h3>
+                    <p>Latest changes made to bike listings.</p>
+                  </div>
+                  <a href="404.html" class="dash-btn dash-btn-outline" id="viewAllActivity">View All</a>
+                </div>
+                <div class="listing-activity">
+                  <div class="activity-item">
+                    <div class="activity-icon approved"><i class="fa-solid fa-check"></i></div>
+                    <div class="activity-content">
+                      <strong>Yamaha MT-15 approved</strong>
+                      <span>Listing approved and published by Admin</span>
+                      <small>10 minutes ago</small>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon pending"><i class="fa-solid fa-clock"></i></div>
+                    <div class="activity-content">
+                      <strong>Royal Enfield Classic 350 submitted</strong>
+                      <span>New listing is waiting for approval</span>
+                      <small>35 minutes ago</small>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon rejected"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="activity-content">
+                      <strong>KTM Duke 200 rejected</strong>
+                      <span>Listing rejected due to incomplete information</span>
+                      <small>1 hour ago</small>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon edit"><i class="fa-solid fa-pen"></i></div>
+                    <div class="activity-content">
+                      <strong>Honda Hornet 2.0 updated</strong>
+                      <span>Price and description were updated</span>
+                      <small>2 hours ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== BULK ACTIONS ===== -->
+              <div class="dash-card dash-mt bulk-actions-card">
+                <div>
+                  <h3><i class="fa-solid fa-layer-group"></i> Bulk Actions</h3>
+                  <p>Select multiple listings and perform an action.</p>
+                </div>
+                <div class="bulk-actions">
+                  <a href="404.html" class="dash-btn dash-btn-success" id="bulkApprove"><i class="fa-solid fa-check"></i> Approve Selected</a>
+                  <a href="404.html" class="dash-btn dash-btn-warning" id="bulkPending"><i class="fa-solid fa-clock"></i> Mark Pending</a>
+                  <a href="404.html" class="dash-btn dash-btn-danger" id="bulkDelete"><i class="fa-solid fa-trash"></i> Delete Selected</a>
+                </div>
+              </div>
+
+            </section>
+
+            <!-- ===== USERS ===== -->
+            <section class="dash-panel" id="panel-users">
+
+              <!-- Header -->
+              <div class="dash-panel-head">
+                <div>
+                  <h2>Users</h2>
+                  <p>Manage all registered buyers and sellers on STACKLY.</p>
+                </div>
+                <a href="404.html" class="dash-btn dash-btn-primary" id="addUserBtn">
+                  <i class="fa-solid fa-user-plus"></i> Add User
+                </a>
+              </div>
+
+              <!-- User Statistics -->
+              <div class="dash-stats-grid">
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon"><i class="fa-solid fa-users"></i></div>
+                  <div class="dash-stat-info">
+                    <span>Total Users</span>
+                    <strong id="totalUsersCount">0</strong>
+                    <small>All registered users</small>
+                  </div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon"><i class="fa-solid fa-user-check"></i></div>
+                  <div class="dash-stat-info">
+                    <span>Active Users</span>
+                    <strong id="activeUsersCount">0</strong>
+                    <small>Currently active</small>
+                  </div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon"><i class="fa-solid fa-user-tag"></i></div>
+                  <div class="dash-stat-info">
+                    <span>Sellers</span>
+                    <strong id="sellerUsersCount">0</strong>
+                    <small>Registered sellers</small>
+                  </div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon"><i class="fa-solid fa-user"></i></div>
+                  <div class="dash-stat-info">
+                    <span>Buyers</span>
+                    <strong id="buyerUsersCount">0</strong>
+                    <small>Registered buyers</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Search & Filters -->
+              <div class="dash-card users-filter-card">
+                <div class="users-filter-head">
+                  <div>
+                    <h3>User Management</h3>
+                    <p>Search and filter registered STACKLY users.</p>
+                  </div>
+                </div>
+                <div class="users-filter-row">
+                  <div class="dash-search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="userSearch" placeholder="Search by name, email or phone...">
+                  </div>
+                  <select class="dash-filter-select" id="userRoleFilter">
+                    <option value="">All Roles</option>
+                    <option value="Buyer">Buyer</option>
+                    <option value="Seller">Seller</option>
+                    <option value="Admin">Admin</option>
+                  </select>
+                  <select class="dash-filter-select" id="userStatusFilter">
+                    <option value="">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Blocked">Blocked</option>
+                  </select>
+                  <a href="404.html" class="dash-btn dash-btn-outline" id="clearUserFilters">
+                    <i class="fa-solid fa-filter-circle-xmark"></i> Clear
+                  </a>
+                </div>
+              </div>
+
+              <!-- Users Table -->
+              <div class="dash-card">
+                <div class="dash-card-head">
+                  <div>
+                    <h3>Registered Users</h3>
+                    <p>View and manage buyer and seller accounts.</p>
+                  </div>
+                  <span class="dash-count-badge" id="usersTableCount">0 Users</span>
+                </div>
+
+                <div class="dash-table-wrap">
+                  <table class="dash-table">
+                    <thead>
+                      <tr>
+                        <th>User</th>
+                        <th>Contact</th>
+                        <th>Role</th>
+                        <th>Location</th>
+                        <th>Listings</th>
+                        <th>Joined</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="adminUsersBody"></tbody>
+                  </table>
+                </div>
+
+                <!-- Empty State -->
+                <div class="dash-empty-state" id="usersEmptyState" style="display:none;">
+                  <div class="dash-empty-icon"><i class="fa-solid fa-users-slash"></i></div>
+                  <h3>No users found</h3>
+                  <p>No users match your current search or filter.</p>
+                  <a href="404.html" type="button" class="dash-btn dash-btn-outline" id="resetUserSearch">Reset Filters</a>
+                </div>
+              </div>
+
+              <!-- Recent User Activity -->
+              <div class="dash-card dash-mt">
+                <div class="dash-card-head">
+                  <div>
+                    <h3>Recent User Activity</h3>
+                    <p>Latest registration and account activity.</p>
+                  </div>
+                  <a href="404.html" class="dash-btn dash-btn-outline" id="viewAllUserActivity">View All</a>
+                </div>
+                <div class="user-activity-list" id="userActivityList">
+                  <div class="user-activity-item">
+                    <div class="activity-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div class="activity-content">
+                      <strong>New user registered</strong>
+                      <p>New buyer account created on STACKLY.</p>
+                    </div>
+                    <span class="activity-time">Just now</span>
+                  </div>
+                  <div class="user-activity-item">
+                    <div class="activity-avatar"><i class="fa-solid fa-motorcycle"></i></div>
+                    <div class="activity-content">
+                      <strong>New seller listing</strong>
+                      <p>A seller added a new bike listing.</p>
+                    </div>
+                    <span class="activity-time">10 min ago</span>
+                  </div>
+                  <div class="user-activity-item">
+                    <div class="activity-avatar"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="activity-content">
+                      <strong>User account verified</strong>
+                      <p>A seller successfully completed verification.</p>
+                    </div>
+                    <span class="activity-time">25 min ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Roles Information -->
+              <div class="dash-card dash-mt">
+                <div class="dash-card-head">
+                  <div>
+                    <h3>User Roles</h3>
+                    <p>Overview of account permissions.</p>
+                  </div>
+                </div>
+                <div class="user-role-grid">
+                  <div class="user-role-card">
+                    <div class="user-role-icon"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                      <h4>Buyer</h4>
+                      <p>Can browse bikes, compare listings, contact sellers and save favorites.</p>
+                    </div>
+                  </div>
+                  <div class="user-role-card">
+                    <div class="user-role-icon"><i class="fa-solid fa-store"></i></div>
+                    <div>
+                      <h4>Seller</h4>
+                      <p>Can create bike listings, manage listings and communicate with buyers.</p>
+                    </div>
+                  </div>
+                  <div class="user-role-card">
+                    <div class="user-role-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div>
+                      <h4>Admin</h4>
+                      <p>Can manage users, listings, approvals, reports and platform settings.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+            <!-- ===== SETTINGS ===== -->
+            <section class="dash-panel" id="panel-settings">
+              <div class="dash-panel-head">
+                <div>
+                  <h2>Settings</h2>
+                  <p>Manage your account and notification preferences.</p>
+                </div>
+              </div>
+              <div class="dash-settings">
+                <form class="app-form" id="dashSettingsForm" novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="dsFname">First Name</label>
+                      <input type="text" id="dsFname" class="form-input" value="Rahul" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="dsLname">Last Name</label>
+                      <input type="text" id="dsLname" class="form-input" value="Sharma" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="dsEmail">Email Address</label>
+                    <input type="email" id="dsEmail" class="form-input" value="admin@stackly.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="dsPhone">Phone Number</label>
+                    <input type="tel" id="dsPhone" class="form-input" value="9876543210" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                </form>
+
+                <form class="app-form dash-password" id="dashPwForm" novalidate>
+                  <h3>Change Password</h3>
+                  <div class="form-group">
+                    <label for="dsCurrent">Current Password</label>
+                    <input type="password" id="dsCurrent" class="form-input" required>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="dsNew">New Password</label>
+                      <input type="password" id="dsNew" class="form-input" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="dsConfirm">Confirm New Password</label>
+                      <input type="password" id="dsConfirm" class="form-input" required>
+                    </div>
+                  </div>
+                  <a href="404.html" id="dashPwSubmit" class="btn btn-outline-dark"><i class="fa-solid fa-key"></i> Update Password</a>
+                </form>
+
+                <div class="dash-notif-list">
+                  <div class="form-row-between">
+                    <div>
+                      <b>Moderation notifications</b>
+                      <span>Get alerts for pending approvals and reports.</span>
+                    </div>
+                    <label class="check-label"><input type="checkbox" id="dsNotify" checked> Enabled</label>
+                  </div>
+                  <div class="form-row-between">
+                    <div>
+                      <b>Listing approvals</b>
+                      <span>Email me when a new bike is submitted for review.</span>
+                    </div>
+                    <label class="check-label"><input type="checkbox" id="dsNotifyList" checked> Enabled</label>
+                  </div>
+                  <div class="form-row-between">
+                    <div>
+                      <b>User reports</b>
+                      <span>Alert me when a buyer or seller is reported.</span>
+                    </div>
+                    <label class="check-label"><input type="checkbox" id="dsNotifyReports"> Enabled</label>
+                  </div>
+                  <div class="form-row-between">
+                    <div>
+                      <b>Marketplace news</b>
+                      <span>Occasional updates on new STACKLY features.</span>
+                    </div>
+                    <label class="check-label"><input type="checkbox" id="dsNotifyNews" checked> Enabled</label>
+                  </div>
+                </div>
+
+                <div class="dash-danger">
+                  <div>
+                    <b>Danger Zone</b>
+                    <span>Permanently delete your admin account and all data.</span>
+                  </div>
+                  <a href="404.html" class="btn btn-danger btn-sm">Delete Account</a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

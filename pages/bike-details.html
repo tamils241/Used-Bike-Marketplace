@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Details | STACKLY</title>
+  <meta name="description" content="View complete details, specifications, gallery and seller information for this used bike on STACKLY.">
+  <meta name="theme-color" content="#0b1526">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="STACKLY">
+  <meta property="og:title" content="Bike Details | STACKLY">
+  <link rel="icon" href="../images/logo/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= PAGE LOADER ================= -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="loader-ring"></span>
+    <p>Loading STACKLY&hellip;</p>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="STACKLY home">
+        <img src="../images/logo/logo.webp" alt="STACKLY — used bike marketplace" width="143" height="44">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="bikes.html" class="nav-link">Buy Bikes</a></li>
+          <li><a href="sell-bike.html" class="nav-link">Sell Your Bike</a></li>
+          <li><a href="brands.html" class="nav-link">Brands</a></li>
+          <li><a href="compare.html" class="nav-link">Compare</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="register.html" class="btn btn-outline btn-sm">Register</a>
+        <a href="sell-bike.html" class="btn btn-primary btn-sm hide-mobile">Sell Your Bike</a>
+        <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <img src="../images/logo/logo.webp" alt="STACKLY" width="132" height="34">
+      <button class="menu-close" id="menuClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html" class="mobile-nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="bikes.html" class="mobile-nav-link"><i class="fa-solid fa-motorcycle"></i> Buy Bikes</a></li>
+        <li><a href="sell-bike.html" class="mobile-nav-link"><i class="fa-solid fa-tags"></i> Sell Your Bike</a></li>
+        <li><a href="brands.html" class="mobile-nav-link"><i class="fa-solid fa-cube"></i> Brands</a></li>
+        <li><a href="compare.html" class="mobile-nav-link"><i class="fa-solid fa-code-compare"></i> Compare</a></li>
+        <li><a href="about.html" class="mobile-nav-link"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="contact.html" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-actions">
+      <a href="login.html" class="btn btn-outline-dark btn-block">Login</a>
+      <a href="register.html" class="btn btn-dark btn-block">Register</a>
+      <a href="sell-bike.html" class="btn btn-primary btn-block">Sell Your Bike</a>
+    </div>
+  </div>
+<main id="bikeDetails">
+    <!-- ================= DETAILS HERO ================= -->
+    <section class="details-hero">
+      <div class="container">
+        <nav class="breadcrumb-light" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="bikes.html">Buy Bikes</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span id="dBrand">Bike</span>
+        </nav>
+
+        <div class="details-title-row">
+          <div>
+            <h1 id="dName">Loading bike details…</h1>
+            <p class="bike-tagline" id="dTagline"></p>
+            <div class="details-meta">
+              <span><i class="fa-solid fa-calendar-days"></i> <span id="dYear">—</span></span>
+              <span><i class="fa-solid fa-gauge-high"></i> <span id="dKm">—</span></span>
+              <span><i class="fa-solid fa-gas-pump"></i> <span id="dFuel">—</span></span>
+              <span><i class="fa-solid fa-gears"></i> <span id="dTrans">—</span></span>
+            </div>
+            <div class="details-rating mt-12">
+              <span class="stars"><i class="fa-solid fa-star"></i> <span id="dRating">—</span></span>
+              <span id="dReviews">— reviews</span>
+            </div>
+          </div>
+          <div class="details-price-block">
+            <div class="price" id="dPrice">—</div>
+            <span class="emi" id="dEmi">—</span>
+            <span class="tag" id="dViews"></span>
+          </div>
+        </div>
+
+        <div class="details-layout">
+          <!-- LEFT COLUMN -->
+          <div class="details-left">
+
+            <!-- Gallery -->
+            <div class="gallery">
+              <div class="gallery-main">
+                <img id="galleryMainImg" alt="Bike gallery image">
+                <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="gallery-nav next" id="galleryNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="gallery-fullscreen" id="galleryFullscreen" aria-label="View fullscreen"><i class="fa-solid fa-expand"></i></button>
+              </div>
+              <div class="gallery-thumbs" id="galleryThumbs"></div>
+            </div>
+
+            <!-- Overview -->
+            <div class="details-content">
+              <h2>Overview</h2>
+              <div id="dDesc"></div>
+            </div>
+
+            <!-- Specifications -->
+            <div class="details-content">
+              <h2>Specifications</h2>
+              <table class="spec-table" id="dSpecs"></table>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDEBAR -->
+          <aside class="details-sidebar">
+            <div class="side-card">
+              <h3><i class="fa-solid fa-bolt"></i> Quick Overview</h3>
+              <div class="key-specs">
+                <div class="key-spec"><i class="fa-solid fa-road"></i><div><small>KM Driven</small><b id="dKm2">—</b></div></div>
+                <div class="key-spec"><i class="fa-solid fa-user"></i><div><small>Owners</small><b id="dOwner">—</b></div></div>
+                <div class="key-spec"><i class="fa-solid fa-calendar-check"></i><div><small>Reg. Year</small><b id="dRegYear">—</b></div></div>
+                <div class="key-spec"><i class="fa-solid fa-shield-heart"></i><div><small>Condition</small><b id="dCondition">—</b></div></div>
+              </div>
+              <div class="detail-actions mt-20">
+                <a href="404.html" class="btn btn-primary" id="dContactSeller"><i class="fa-solid fa-envelope"></i> Contact Seller</a>
+                <a href="404.html" class="btn btn-call" id="dCallSeller"><i class="fa-solid fa-phone"></i> Call Seller</a>
+                <a href="404.html" class="btn btn-whatsapp btn-wide" id="dWhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Seller</a>
+                <a href="404.html" class="btn btn-outline-dark" id="dFav"><i class="fa-regular fa-heart"></i> Add to Favorites</a>
+                <a href="404.html" class="btn btn-outline-dark" id="dCompare"><i class="fa-solid fa-code-compare"></i> Compare</a>
+              </div>
+            </div>
+
+            <div class="side-card">
+              <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
+              <p class="mb-16 text-muted text-sm"><b id="dLocation">—</b></p>
+              <div class="map-embed">
+                <iframe id="dMapEmbed"
+                  src="https://www.google.com/maps?q=India&output=embed"
+                  width="100%" height="220" style="border:0;border-radius:12px;"
+                  allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Bike location map"></iframe>
+              </div>
+            </div>
+
+            <div class="side-card">
+              <h3><i class="fa-solid fa-list-check"></i> Features</h3>
+              <ul class="feature-list" id="dFeatures"></ul>
+            </div>
+
+            <div class="side-card">
+              <h3><i class="fa-solid fa-user-check"></i> Seller Information</h3>
+              <div class="seller-info-box">
+                <img src="../images/users/user-1.webp" alt="Seller avatar">
+                <div class="info">
+                  <b>Verified Seller</b>
+                  <span>Based in <span id="dLocation2">—</span> &middot; Member since 2021 &middot; <span class="seller-badge"><i class="fa-solid fa-circle-check"></i> Identity verified</span></span>
+                </div>
+                <a href="404.html" class="btn btn-primary btn-block" id="dContactSeller2"><i class="fa-solid fa-envelope"></i> Contact Seller</a>
+              </div>
+            </div>
+
+            <div class="safety-strip">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div><b>STACKLY Safety Tip</b><br>Inspect the bike in person and verify all original documents before completing the payment.</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SIMILAR BIKES ================= -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Keep Exploring</span>
+          <h2 class="section-title">Similar <span class="accent">Bikes</span></h2>
+          <p class="section-subtitle">More bikes you might like from trusted sellers.</p>
+        </div>
+        <div class="grid grid-cards-lg" id="similarBikes"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= NOT FOUND ================= -->
+  <section class="section is-hidden" id="bikeNotFound">
+    <div class="container">
+      <div class="notfound">
+        <div class="nf-code">404</div>
+        <h2>Bike Not Found</h2>
+        <p class="mb-16" class="text-muted">The bike you're looking for doesn't exist or has been sold.</p>
+        <a href="bikes.html" class="btn btn-primary">Browse All Bikes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="../index.html" aria-label="STACKLY home" class="footer-logo-link"><img class="footer-logo" src="../images/logo/logo.webp" alt="STACKLY logo" width="150" height="38"></a>
+          <p class="footer-about">Your trusted destination for buying and selling used bikes. Find your ride, make it yours.</p>
+          <div class="footer-socials">
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Buy Bikes</h4>
+          <ul class="footer-links">
+            <li><a href="bikes.html"><i class="fa-solid fa-caret-right"></i> Search Bikes</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-caret-right"></i> Featured Bikes</a></li>
+            <li><a href="brands.html"><i class="fa-solid fa-caret-right"></i> Popular Brands</a></li>
+            <li><a href="compare.html"><i class="fa-solid fa-caret-right"></i> Compare Bikes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sell Bikes</h4>
+          <ul class="footer-links">
+            <li><a href="sell-bike.html"><i class="fa-solid fa-caret-right"></i> Sell Your Bike</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-caret-right"></i> Price Estimator</a></li>
+            <li><a href="sell-bike.html"><i class="fa-solid fa-caret-right"></i> Seller Guide</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> Dealer Registration</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-caret-right"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> Contact</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> Help Center</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-caret-right"></i> FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot"></i> 123 Main Street, Bangalore, India</li>
+            <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@stackly.com">info@stackly.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 STACKLY. All Rights Reserved.</span>
+        <span><a href="404.html">Privacy</a> &middot; <a href="404.html">Terms</a> &middot; <a href="404.html">Support</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/bikes.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>

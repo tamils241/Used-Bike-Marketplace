@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting… | STACKLY</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/logo/logo.webp" type="image/webp">
+</head>
+<body>
+  <p style="font-family: sans-serif; text-align: center; padding-top: 30vh; color: #5c6b7c;">
+    Redirecting to your dashboard&hellip;
+  </p>
+  <script>
+    var role = "user";
+    try { role = localStorage.getItem("stackly_role") || "user"; } catch (e) {}
+    window.location.replace(role === "admin" ? "admin-dashboard.html" : "user-dashboard.html");
+  </script>
+</body>
+</html>
