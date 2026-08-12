@@ -1967,6 +1967,25 @@ textarea.form-control {
   margin-bottom: 24px;
 }
 
+.auth-logo-mobile {
+  display: none;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.auth-logo-mobile img {
+  display: block;
+  width: 132px;
+  height: 34px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .auth-logo-mobile {
+    display: flex;
+  }
+}
+
 .auth-head h3 {
   font-size: 1.5rem;
   margin-bottom: 6px;

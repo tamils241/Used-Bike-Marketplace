@@ -381,7 +381,6 @@
   window.countBy = countBy;
   window.BASE = BASE;
   window.asset = img;
-  window.MODELS_BY_BRAND = MODELS_BY_BRAND;
 
   /* ---------- 5. MODALS ---------- */
   var modalOverlay = null;
@@ -745,19 +744,20 @@
 
   /* ---------- 15. PRICE ESTIMATOR ---------- */
   var MODELS_BY_BRAND = {
-    "Yamaha": ["MT-15", "R15 V4", "FZ-S V3", "FZ-X"],
-    "Honda": ["Activa 6G", "CB Shine", "Hornet 2.0", "SP 125"],
-    "Royal Enfield": ["Classic 350", "Himalayan 411", "Hunter 350", "Meteor 350"],
-    "KTM": ["Duke 200", "Duke 390", "RC 200"],
-    "TVS": ["Apache RTR 160", "Ntorq 125", "Raider 125"],
-    "Bajaj": ["Pulsar NS200", "Pulsar 150", "CT 100"],
-    "Suzuki": ["Access 125", "Gixxer 155", "Burgman Street"],
-    "Hero": ["Splendor Plus", "HF Deluxe", "Xtreme 160R"],
-    "Kawasaki": ["Ninja 300", "Ninja 650", "Z900"],
-    "BMW": ["G 310 R", "G 310 GS"],
-    "Jawa": ["Jawa 42", "Jawa Classic", "Jawa 350"],
-    "Ola Electric": ["S1 Pro", "S1 Air", "S1 X"]
+    "Yamaha": ["MT-15", "R15 V4", "R15 V3", "FZ-S V3", "FZ-X", "FZ 25", "MT-03", "YZF-R3"],
+    "Honda": ["Activa 6G", "Activa 5G", "CB Shine", "Hornet 2.0", "SP 125", "Unicorn", "CB350RS", "Dio", "Shine SP"],
+    "Royal Enfield": ["Classic 350", "Bullet 350", "Hunter 350", "Meteor 350", "Himalayan 411", "Himalayan 450", "Continental GT 650", "Interceptor 650", "Thunderbird 350"],
+    "KTM": ["Duke 200", "Duke 250", "Duke 390", "RC 200", "RC 390", "Adventure 390"],
+    "TVS": ["Apache RTR 160", "Apache RTR 200", "Ntorq 125", "Raider 125", "Jupiter 110", "Ronin 225"],
+    "Bajaj": ["Pulsar NS200", "Pulsar N250", "Pulsar 150", "Pulsar 220", "Dominar 400", "Avenger 220", "CT 100", "Platina 110"],
+    "Suzuki": ["Access 125", "Gixxer 155", "Burgman Street", "V-Strom 250", "GSX-S750"],
+    "Hero": ["Splendor Plus", "HF Deluxe", "Passion Pro", "Glamour 125", "Xtreme 160R", "Karizma XMR"],
+    "Kawasaki": ["Ninja 300", "Ninja 400", "Ninja 650", "Z650", "Z900", "Versys 650"],
+    "BMW": ["G 310 R", "G 310 GS", "S 1000 RR", "R 1250 GS"],
+    "Jawa": ["Jawa 42", "Jawa Classic", "Jawa 350", "42 Bobber", "Perak"],
+    "Ola Electric": ["S1 Pro", "S1 Pro Plus", "S1 Air", "S1 X"]
   };
+  window.MODELS_BY_BRAND = MODELS_BY_BRAND;
   var BASE_PRICE = {
     "Yamaha": 120000, "Honda": 75000, "Royal Enfield": 135000, "KTM": 150000,
     "TVS": 80000, "Bajaj": 85000, "Suzuki": 70000, "Hero": 60000,
