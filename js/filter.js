@@ -384,6 +384,7 @@
   function initCategories() {
     var grid = $q("#categoryGrid");
     if (!grid) return;
+    if (grid.querySelector(".cat-card")) return;
     grid.innerHTML = window.STACKLY_CATEGORIES.map(function (c) {
       return '<div class="cat-card reveal">' +
         '<div class="cat-img"><img src="' + BASE + "images/bikes/" + c.image + '" alt="' + c.name + '" loading="lazy"></div>' +
@@ -399,6 +400,7 @@
   function initCities() {
     var grid = $q("#cityGrid");
     if (!grid) return;
+    if (grid.querySelector(".city-card")) return;
     grid.innerHTML = window.STACKLY_CITIES.map(function (c) {
       return '<a class="city-card reveal" href="' + BASE + "pages/bikes.html?location=" + encodeURIComponent(c.name) + '">' +
         '<div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>' +

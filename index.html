@@ -9,6 +9,8 @@
   <meta name="author" content="STACKLY">
   <meta name="theme-color" content="#0b1526">
 
+  <script>document.documentElement.className += " js";</script>
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="STACKLY">
@@ -29,6 +31,13 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+
+  <!-- Fallback so the page is never hidden when JS is off or fails to load -->
+  <noscript>
+    <style>
+      .page-loader { display: none !important; }
+    </style>
+  </noscript>
 
   <!-- ================= PAGE LOADER ================= -->
   <div class="page-loader" id="pageLoader" aria-hidden="true">
@@ -221,7 +230,71 @@
           <h2 class="section-title">Popular Bike <span class="accent">Categories</span></h2>
           <p class="section-subtitle">Explore bikes by type and find exactly what fits your ride style.</p>
         </div>
-        <div class="grid grid-cards-lg" id="categoryGrid"><!-- injected by JS --></div>
+        <div class="grid grid-cards-lg" id="categoryGrid">
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Commuter Bikes.webp" alt="Commuter Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-bicycle"></i></div>
+            <h3>Commuter Bikes</h3>
+            <span class="cat-count">1,240 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Commuter">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/KTM Duke 200.webp" alt="Sports Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3>Sports Bikes</h3>
+            <span class="cat-count">860 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Sports">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Royal Enfield Classic 350.webp" alt="Cruiser Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-route"></i></div>
+            <h3>Cruiser Bikes</h3>
+            <span class="cat-count">420 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Cruiser">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/honda-activa-6g.webp" alt="Scooters" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Scooters</h3>
+            <span class="cat-count">1,150 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Scooters">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Royal Enfield Himalayan 411.webp" alt="Adventure Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-mountain"></i></div>
+            <h3>Adventure Bikes</h3>
+            <span class="cat-count">310 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Adventure">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Ola S1 Pro.webp" alt="Electric Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-charging-station"></i></div>
+            <h3>Electric Bikes</h3>
+            <span class="cat-count">280 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Electric">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Kawasaki Ninja 300.webp" alt="Touring Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-road"></i></div>
+            <h3>Touring Bikes</h3>
+            <span class="cat-count">190 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Touring">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Royal Enfield Himalayan 411.webp" alt="Off-Road Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+            <h3>Off-Road Bikes</h3>
+            <span class="cat-count">150 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Off-Road">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="cat-card reveal">
+            <div class="cat-img"><img src="images/bikes/Jawa 42.webp" alt="Classic Bikes" loading="lazy"></div>
+            <div class="cat-icon"><i class="fa-solid fa-motorcycle"></i></div>
+            <h3>Classic Bikes</h3>
+            <span class="cat-count">130 bikes</span>
+            <a class="cat-link" href="pages/bikes.html?type=Classic">View Bikes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -351,7 +424,68 @@
           <h2 class="section-title">Find Bikes <span class="accent">Near You</span></h2>
           <p class="section-subtitle">Popular locations where buyers and sellers connect every day.</p>
         </div>
-        <div class="grid grid-cards" id="cityGrid"><!-- injected by JS --></div>
+        <div class="grid grid-cards" id="cityGrid">
+          <a class="city-card reveal" href="pages/bikes.html?location=Chennai">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Chennai</h3><span>1,240 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Bangalore">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Bangalore</h3><span>1,180 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Coimbatore">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Coimbatore</h3><span>620 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Madurai">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Madurai</h3><span>340 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Trichy">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Trichy</h3><span>290 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Kochi">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Kochi</h3><span>430 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Hyderabad">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Hyderabad</h3><span>960 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Bengaluru">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Bengaluru</h3><span>1,180 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Mumbai">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Mumbai</h3><span>1,020 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Delhi">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Delhi</h3><span>890 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Pune">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Pune</h3><span>720 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+          <a class="city-card reveal" href="pages/bikes.html?location=Ahmedabad">
+            <div class="city-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><h3>Ahmedabad</h3><span>540 bikes</span></div>
+            <i class="fa-solid fa-chevron-right chev"></i>
+          </a>
+        </div>
       </div>
     </section>
 

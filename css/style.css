@@ -2083,14 +2083,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- 22. SCROLL REVEAL ---------- */
-.reveal {
+/* Content is visible by default; hidden state only applies when JS is active */
+html.js .reveal {
   opacity: 0;
   transform: translateY(34px);
   transition: opacity 0.7s ease, transform 0.7s var(--ease-bounce);
   will-change: opacity, transform;
 }
 
-.reveal.visible {
+html.js .reveal.visible {
   opacity: 1;
   transform: none;
 }
