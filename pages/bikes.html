@@ -123,14 +123,19 @@
           <div>
             <div class="results-bar">
               <div class="results-count" id="resultsCount">Loading bikes…</div>
-              <div class="sort-box">
-                <label for="bikesSort"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort:</label>
-                <select class="sort-select" id="bikesSort">
-                  <option value="newest">Newest</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="views">Most Viewed</option>
-                </select>
+              <div class="results-actions">
+                <button class="btn btn-outline-dark btn-sm filter-open-btn" id="filtersOpenBtn" type="button" aria-label="Toggle filters" aria-controls="filterPanel">
+                  <i class="fa-solid fa-sliders"></i> Filters
+                </button>
+                <div class="sort-box">
+                  <label for="bikesSort"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort:</label>
+                  <select class="sort-select" id="bikesSort">
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="views">Most Viewed</option>
+                  </select>
+                </div>
               </div>
             </div>
 

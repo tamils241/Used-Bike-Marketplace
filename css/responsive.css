@@ -10,7 +10,12 @@
   }
 
   .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .footer-col:first-child {
+    grid-column: span 2;
   }
 }
 
@@ -27,6 +32,15 @@
   }
 
   .hamburger {
+    display: inline-flex;
+  }
+
+  .grid-cards-lg {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .filter-open-btn {
     display: inline-flex;
   }
 
@@ -143,14 +157,41 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .bike-foot {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .bike-foot .btn {
+    padding: 9px 14px;
+    font-size: 0.82rem;
+  }
+
   .feature-list {
     grid-template-columns: 1fr;
   }
 
   .spec-table {
     display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+  }
+
+  .spec-table tr {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+    border-bottom: 1px dashed var(--c-border);
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 11px 6px;
+    width: auto;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .compare-table {
+    min-width: 0;
   }
 
   .sell-steps {
@@ -159,13 +200,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
-@media (max-width: 700px) {
-  .grid-cards-lg {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
 
   .form-row-3 {
     grid-template-columns: 1fr 1fr;
@@ -189,6 +223,14 @@
   .footer-bottom {
     justify-content: center;
     text-align: center;
+  }
+}
+
+/* ---------- 700px ---------- */
+@media (max-width: 700px) {
+  .grid-cards-lg {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
 
@@ -268,6 +310,10 @@
     gap: 12px;
   }
 
+  .logo {
+    width: auto;
+  }
+
   .logo img {
     width: 96px;
     height: 29px;
@@ -312,6 +358,13 @@
     justify-content: space-between;
     border-radius: var(--radius);
     bottom: 14px;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .compare-bar .btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 
   .back-top {
@@ -403,6 +456,16 @@
     align-items: flex-start;
   }
 
+  .results-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results-actions .sort-box {
+    width: 100%;
+  }
+
   .filter-actions {
     grid-template-columns: 1fr;
   }
@@ -482,6 +545,10 @@
 
 /* ---------- 375px ---------- */
 @media (max-width: 375px) {
+  :root {
+    --header-h: 68px;
+  }
+
   .logo img {
     width: 89px;
     height: 27px;
@@ -616,6 +683,19 @@ table {
 /* Reset */
 .filter-actions #resetFilters {
   width: auto;
+}
+
+/* Sidebar is only 285px wide on laptops — stack the action buttons so they are not clipped */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .filter-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1256,5 +1336,35 @@ body {
 
   .dash-header-logout {
     display: none !important;
+  }
+}
+
+/* =========================================================
+   DASHBOARD TOOLBARS — TABLET (769-1000px)
+   Stack search + filter controls so nothing gets cramped
+   ========================================================= */
+@media (max-width: 1000px) {
+  .favorites-toolbar,
+  .messages-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .favorites-search,
+  .messages-search {
+    max-width: none;
+    width: 100%;
+  }
+
+  .favorites-filters,
+  .messages-filters {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .favorites-filters select,
+  .messages-filters select {
+    flex: 1;
+    min-width: 140px;
   }
 }

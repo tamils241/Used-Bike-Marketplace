@@ -293,22 +293,39 @@
       var yr = $q("#fYear"); if (yr) yr.value = "0";
       var km = $q("#fKm"); if (km) km.value = "0";
       refresh();
+      closePanel();
       window.showToast("Filters reset", "Showing all bikes again.", "info");
     });
 
     var applyBtn = $q("#applyFilters");
+    var panel = $q("#filterPanel");
+    function closePanel() {
+      if (panel) panel.classList.remove("open");
+    }
     if (applyBtn) applyBtn.addEventListener("click", function () {
       render();
+      closePanel();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Mobile filter toggle
+    // Mobile filter toggle (close button inside panel)
     var toggle = $q("#filterToggle");
-    var panel = $q("#filterPanel");
     if (toggle && panel) {
       toggle.addEventListener("click", function () {
         panel.classList.toggle("open");
         toggle.setAttribute("aria-expanded", panel.classList.contains("open"));
+      });
+    }
+
+    // Mobile filter open button (results bar)
+    var openBtn = $q("#filtersOpenBtn");
+    if (openBtn && panel) {
+      openBtn.addEventListener("click", function () {
+        var isOpen = panel.classList.toggle("open");
+        openBtn.setAttribute("aria-expanded", isOpen);
+        if (isOpen) {
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
     }
   }
